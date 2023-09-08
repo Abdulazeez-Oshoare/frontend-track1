@@ -17,11 +17,10 @@ function updateUTCTime() {
   }
 
  
-  const formattedMilliseconds = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
-
-  const currentUTCTime = `${hours}:${minutes}:${formattedSeconds}.${formattedMilliseconds}`;
+  const currentUTCTime = `${hours}:${minutes}:${formattedSeconds}.${milliseconds}`;
 
   redElement.innerHTML = "Current UTC Time: " + currentUTCTime;
 }
 
+updateUTCTime();
 
