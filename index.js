@@ -1,28 +1,32 @@
-const redElement = document.getElementById("red");
+const red = document.getElementById("red");
 
 setInterval(() => {
+  
   const currentUTCDate = new Date();
   const hours = currentUTCDate.getUTCHours() + 1;
   const minutes = currentUTCDate.getUTCMinutes();
   const seconds = currentUTCDate.getUTCSeconds();
   const milliseconds = currentUTCDate.getUTCMilliseconds();
 
- if (hours >= 24) {
-    hours -= 24;
-  }
- 
+  const format = hours < 12 ? "AM" : "PM";
 
+  
+  if (hours > 12) {
+    hours -= 12;
+  } else if (hours === 0) {
+    hours = 12; 
+  }
   const formattedHours = hours < 10 ? "0" + hours : hours;
   const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
   const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
-  const formattedMilliseconds =  milliseconds < 100 ? "0" + milliseconds : milliseconds;
 
-  redElement.innerHTML = "Current UTC time: " + formattedHours + ":" + formattedMinutes + ":" + formattedSeconds + "." + formattedMilliseconds;
+
+  red.innerHTML = "Current UTC time: " + formattedHours + ":" + formattedMinutes + ":" + formattedSeconds + "." + milliseconds +" " + format ;
 }, 1000);
 
 
 
-const dayElement = document.getElementById("day");
+
 
 
 const wess = document.getElementById("wess");
