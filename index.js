@@ -3,7 +3,7 @@ const wessElement = document.getElementById("wess");
 
 function updateDateTime() {
     const currentUTCDate = new Date();
-    const hours = currentUTCDate.getUTCHours();
+    const hours = currentUTCDate.getUTCHours() + 1;
     const minutes = currentUTCDate.getUTCMinutes();
     const seconds = currentUTCDate.getUTCSeconds();
     const milliseconds = currentUTCDate.getUTCMilliseconds();
