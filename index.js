@@ -33,8 +33,11 @@ const currentUTCDate = new Date();
 
 const hours = currentUTCDate.getUTCHours();
 const minutes = currentUTCDate.getUTCMinutes();
+const seconds = currentUTCDate.getUTCSeconds();
+const milliseconds = currentUTCDate.getUTCMilliseconds();
 
-const currentUTCTime = `${hours}:${minutes}`;
+
+const currentUTCTime = `${hours}:${minutes}:${seconds}.${milliseconds}`;
 
 red.innerHTML = "Current UTC Time: " + currentUTCTime;
 
