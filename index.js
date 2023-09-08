@@ -8,8 +8,15 @@ function updateUTCTime() {
   const seconds = currentUTCDate.getUTCSeconds();
   const milliseconds = currentUTCDate.getUTCMilliseconds();
 
-  // Format seconds and milliseconds with leading zeros
-  const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+  if (seconds < 10) {
+    
+    var formattedSeconds = "0" + seconds;
+  } else {
+    
+    var formattedSeconds = seconds;
+  }
+
+ 
   const formattedMilliseconds = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
 
   const currentUTCTime = `${hours}:${minutes}:${formattedSeconds}.${formattedMilliseconds}`;
@@ -17,5 +24,4 @@ function updateUTCTime() {
   redElement.innerHTML = "Current UTC Time: " + currentUTCTime;
 }
 
-// Update the time every 100 milliseconds (adjust as needed)
-setInterval(updateUTCTime, 100);
+
